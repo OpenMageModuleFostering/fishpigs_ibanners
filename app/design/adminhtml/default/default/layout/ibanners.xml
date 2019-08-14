@@ -10,16 +10,30 @@
 		</reference>	
 	</ibanners_default>
 	
-	<ibanners_admin_adminhtml_group_index>
-		<reference name="head">
-			<action method="setTitle" translate="title" module="ibanners"><title>Manage Banner Groups - iBanners by Fishpig</title></action>
-		</reference>
+	<!--
+	/**
+	 * Splash Dashboard
+	 */
+	 -->
+	<adminhtml_ibanners_index>
 		<reference name="content">
-			<block type="ibanners/adminhtml_group" name="groups" />
+			<block type="core/text" name="ibanners.dashboard.title">
+				<action method="setText">
+					<text><![CDATA[<div class="content-header"><h3>iBanners</h3></div>]]></text>
+				</action>
+			</block>
+			<block type="ibanners/adminhtml_dashboard" name="ibanners.dashboard" />
+			<block type="core/text" name="ibanners.tabs.content">
+				<action method="setText">
+					<text><![CDATA[
+						<div id="ibanners_tab_content"></div>
+						<style type="text/css">#ibanners_tab_content .content-header { display: none; }</style>
+					]]></text>
+				</action>
+			</block>
 		</reference>
-	</ibanners_admin_adminhtml_group_index>
-	
-	<ibanners_admin_adminhtml_group_edit>
+	</adminhtml_ibanners_index>
+	<adminhtml_ibanners_group_edit>
 		<update handle="ibanners_default" />
 		<reference name="left">
 			<block type="ibanners/adminhtml_group_edit_tabs" name="group.tabs" />
@@ -27,18 +41,8 @@
 		<reference name="content">
 			<block type="ibanners/adminhtml_group_edit" name="groups" />
 		</reference>
-	</ibanners_admin_adminhtml_group_edit>
-	
-	<ibanners_admin_adminhtml_banner_index>
-		<reference name="head">
-			<action method="setTitle" translate="title" module="ibanners"><title>Manage Banners - iBanners by Fishpig</title></action>
-		</reference>
-		<reference name="content">
-			<block type="ibanners/adminhtml_banner" name="banner" />
-		</reference>
-	</ibanners_admin_adminhtml_banner_index>
-	
-	<ibanners_admin_adminhtml_banner_edit>
+	</adminhtml_ibanners_group_edit>
+	<adminhtml_ibanners_banner_edit>
 		<update handle="ibanners_default" />
 		<reference name="left">
 			<block type="ibanners/adminhtml_banner_edit_tabs" name="banners.tabs" />
@@ -46,6 +50,5 @@
 		<reference name="content">
 			<block type="ibanners/adminhtml_banner_edit" name="banners" />
 		</reference>
-	</ibanners_admin_adminhtml_banner_edit>
-	
+	</adminhtml_ibanners_banner_edit>
 </layout>

@@ -12,11 +12,41 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 	{
 		parent::__construct();
 		
-		$this->setId('banner_grid');
+		$this->setId('ibanners_group_grid');
 		$this->setDefaultSort('title');
 		$this->setDefaultDir('asc');
 		$this->setSaveParametersInSession(true);
 		$this->setUseAjax(true);
+	}
+
+	/**
+	 * Insert the Add New button
+	 *
+	 * @return $this
+	 */
+	protected function _prepareLayout()
+	{
+		$this->setChild('add_button',
+			$this->getLayout()->createBlock('adminhtml/widget_button')
+				->setData(array(
+					'label'     => Mage::helper('adminhtml')->__('Add New Group'),
+					'class' => 'add',
+					'onclick'   => "setLocation('" . $this->getUrl('*/ibanners_group/new') . "');",
+				))
+		);
+				
+		return parent::_prepareLayout();
+	}
+	
+	/**
+	 * Retrieve the main buttons html
+	 *
+	 * @return string
+	 */
+	public function getMainButtonsHtml()
+	{
+		return parent::getMainButtonsHtml()
+			. $this->getChildHtml('add_button');
 	}
 
 	/**
@@ -25,9 +55,7 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 	 */
 	protected function _prepareCollection()
 	{
-		$collection = Mage::getResourceModel('ibanners/group_collection');
-
-		$this->setCollection($collection);
+		$this->setCollection(Mage::getResourceModel('ibanners/group_collection'));
 	
 		return parent::_prepareCollection();
 	}
@@ -87,7 +115,7 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 					array(
 						'caption' => Mage::helper('catalog')->__('Edit'),
 						'url'     => array(
-						'base'=>'*/*/edit',
+						'base'=>'*/ibanners_group/edit',
 					),
 					'field'   => 'id'
 					)
@@ -101,13 +129,13 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 	}
 	
 	/**
-	 * Retrieve the URL used to modify the grid via AJAX
+	 * Get the current URL for the grid
 	 *
 	 * @return string
 	 */
-	public function getGridUrl()
+	public function getCurrentUrl($params = array())
 	{
-		return $this->getUrl('*/*/grid');
+		return $this->getUrl('*/*/groupGrid');
 	}
 	
 	/**
@@ -116,7 +144,7 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 	 */
 	public function getRowUrl($row)
 	{
-		return $this->getUrl('*/*/edit', array('id' => $row->getId()));
+		return $this->getUrl('*/ibanners_group/edit', array('id' => $row->getId()));
 	}
 
 	/**
@@ -143,7 +171,7 @@ class Fishpig_iBanners_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_W
 	
 		$this->getMassactionBlock()->addItem('delete', array(
 			'label'=> $this->__('Delete'),
-			'url'  => $this->getUrl('*/*/massDelete'),
+			'url'  => $this->getUrl('*/ibanners_group/massDelete'),
 			'confirm' => Mage::helper('catalog')->__('Are you sure?')
 		));
 	}

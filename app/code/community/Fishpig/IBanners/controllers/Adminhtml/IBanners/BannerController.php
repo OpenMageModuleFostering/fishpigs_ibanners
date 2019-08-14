@@ -6,25 +6,18 @@
  * @author      Ben Tideswell <help@fishpig.co.uk>
  */
 
-class Fishpig_iBanners_Adminhtml_BannerController extends Mage_Adminhtml_Controller_Action
+class Fishpig_iBanners_Adminhtml_iBanners_BannerController extends Mage_Adminhtml_Controller_Action
 {
+	/**
+	 * Redirect to iBanners dashboard
+	 *
+	 * @return $this
+	 */
 	public function indexAction()
 	{
-		$this->loadLayout();
-		$this->_setActiveMenu('cms/ibanners');
-		$this->renderLayout();
+		return $this->_redirect('*/ibanners');
 	}
-	
-	/**
-	 * Display the banner grid
-	 *
-	 */
-	public function gridAction()
-	{
-		$this->getResponse()
-			->setBody($this->getLayout()->createBlock('ibanners/adminhtml_banner_grid')->toHtml());
-	}
-	
+
 	/**
 	 * Forward to the edit action so the user can add a new banner
 	 *
@@ -40,20 +33,12 @@ class Fishpig_iBanners_Adminhtml_BannerController extends Mage_Adminhtml_Control
 	 */
 	public function editAction()
 	{
-		$banner = $this->_initBannerModel();
 		$this->loadLayout();
 		
-		if ($headBlock = $this->getLayout()->getBlock('head')) {
-			$titles = array('iBanners by FishPig');
-			
-			if ($banner) {
-				array_unshift($titles, $banner->getTitle());
-			}
-			else {
-				array_unshift($titles, 'Create a Banner');
-			}
+		$this->_title('iBanners');
 
-			$headBlock->setTitle(implode(' - ', $titles));
+		if ($banner = $this->_initBannerModel()) {
+			$this->_title($banner->getTitle());
 		}
 
 		$this->renderLayout();
@@ -91,7 +76,7 @@ class Fishpig_iBanners_Adminhtml_BannerController extends Mage_Adminhtml_Control
 			$this->_getSession()->addError($this->__('There was no data to save'));
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/ibanners');
 	}
 
 	/**
@@ -137,7 +122,7 @@ class Fishpig_iBanners_Adminhtml_BannerController extends Mage_Adminhtml_Control
 			}
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/ibanners');
 	}
 	
 	/**
@@ -170,7 +155,7 @@ class Fishpig_iBanners_Adminhtml_BannerController extends Mage_Adminhtml_Control
 			}
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/ibanners');
 	}
 	
 	/**

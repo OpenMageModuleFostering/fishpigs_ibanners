@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Fishpig_iBanners>
-			<version>1.1.0.1</version>
+			<version>1.2.0.0</version>
 		</Fishpig_iBanners>
 	</modules>
 	<global>
@@ -65,13 +65,13 @@
 	</frontend>
 	<admin>
 		<routers>
-			<ibanners_admin>
-				<use>admin</use>
+			<adminhtml>
 				<args>
-					<module>Fishpig_iBanners</module>
-					<frontName>admin_ibanners</frontName>
+					<modules>
+						<ibanners before="Mage_Adminhtml">Fishpig_iBanners_Adminhtml</ibanners>
+					</modules>
 				</args>
-			</ibanners_admin>
+			</adminhtml>
 		</routers>
 	</admin>
 	<adminhtml>

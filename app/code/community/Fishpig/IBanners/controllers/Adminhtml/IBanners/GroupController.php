@@ -6,23 +6,16 @@
  * @author      Ben Tideswell <help@fishpig.co.uk>
  */
 
-class Fishpig_iBanners_Adminhtml_GroupController extends Mage_Adminhtml_Controller_Action
+class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml_Controller_Action
 {
+	/**
+	 * Redirect to iBanners dashboard
+	 *
+	 * @return $this
+	 */
 	public function indexAction()
 	{
-		$this->loadLayout();
-		$this->_setActiveMenu('cms/ibanners');
-		$this->renderLayout();
-	}
-	
-	/**
-	 * Display the group grid
-	 *
-	 */
-	public function gridAction()
-	{
-		$this->getResponse()
-			->setBody($this->getLayout()->createBlock('ibanners/adminhtml_group_grid')->toHtml());
+		return $this->_redirect('*/ibanners');
 	}
 	
 	/**
