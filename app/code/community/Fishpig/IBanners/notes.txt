@@ -10,9 +10,10 @@
 TODO
 - Convert animation and control values to serialized single columns
 
-14/08/2012 - 1.0.6
+14/08/2012 - 1.0.7
 - Added dynamic controls that can be activated via the group
 - Removed group animation settings from config
+- Added option to get XML code from Admin
 
 14/08/2012 - 1.0.4
 - Added images to controls
