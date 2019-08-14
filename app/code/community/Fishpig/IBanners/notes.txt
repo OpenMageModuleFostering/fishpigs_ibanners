@@ -10,6 +10,12 @@
 TODO
 - Convert animation and control values to serialized single columns
 
+06/06/2013 - 1.1.0.1
+- Added fix for using HTTPS URL's
+
+23/03/2013 - 1.1.0.0
+- Added auto JS/CSS includes for any page that has a iBanners block
+
 14/08/2012 - 1.0.7
 - Added dynamic controls that can be activated via the group
 - Removed group animation settings from config

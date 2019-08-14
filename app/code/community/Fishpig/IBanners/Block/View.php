@@ -8,6 +8,9 @@
 
 class Fishpig_iBanners_Block_View extends Mage_Core_Block_Template
 {
+	const HEAD_ITEM_KEY_JS = 'js/fishpig/carousel.min.js';
+	const HEAD_ITEM_KEY_CSS = 'skin_css/css/ibanners.css';
+	
 	/**
 	 * Determine whether a valid group is set
 	 *
@@ -134,4 +137,19 @@ class Fishpig_iBanners_Block_View extends Mage_Core_Block_Template
 	
 		return $this;	
 	}
+	
+	/**
+	 * Ensure the JS and CSS have been included
+	 *
+	 * @return $this
+	 */
+	protected function _prepareLayout()
+	{
+		if (($headBlock = $this->getLayout()->getBlock('head')) !== false) {
+			$headBlock->addJs('fishpig/carousel.min.js');
+			$headBlock->addCss('css/ibanners.css');
+		}
+		
+		return parent::_prepareLayout();
+	}	
 }

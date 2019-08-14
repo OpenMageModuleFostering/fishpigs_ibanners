@@ -71,7 +71,7 @@ class Fishpig_iBanners_Model_Banner extends Mage_Core_Model_Abstract
 	public function getUrl()
 	{
 		if ($this->_getData('url')) {
-			if (strpos($this->_getData('url'), 'http://') === false) {
+			if (strpos($this->_getData('url'), 'http://') === false && strpos($this->_getData('url'), 'https://') === false) {
 				$this->setUrl(Mage::getBaseUrl() . ltrim($this->_getData('url'), '/ '));
 			}
 		}
