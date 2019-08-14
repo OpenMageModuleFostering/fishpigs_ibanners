@@ -8,9 +8,15 @@
 ##
 
 TODO
-- Convert animation and control values to serialized single columns
+- Convert animation and control values to serialised single columns
 
-20/01/2014 - 1.2.2.0
+15/12/2015 - 1.2.4.3
+- Added WYSIWYG editor the 'html' field for Banners.
+
+02/09/2015 - 1.2.4.2
+- Added in url_target field.
+
+21/01/2014 - 1.2.4.0
 - Fixed menu link in Magento Admin
 
 03/11/2013 - 1.2.0.0

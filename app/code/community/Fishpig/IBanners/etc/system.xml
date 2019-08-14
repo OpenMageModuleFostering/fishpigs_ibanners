@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
-<config />
-<!--
+<config>
 	<tabs>
-		<fishpig translate="label" module="ibanners">
+		<fishpig>
 			<label>FishPig</label>
 			<sort_order>200</sort_order>
 		</fishpig>
 	</tabs>
     <sections>
-        <ibanners translate="label" module="ibanners">
+        <ibanners>
             <label>iBanners</label>
             <tab>fishpig</tab>
             <sort_order>600</sort_order>
@@ -38,4 +37,3 @@
         </ibanners>
     </sections>
 </config>
--->

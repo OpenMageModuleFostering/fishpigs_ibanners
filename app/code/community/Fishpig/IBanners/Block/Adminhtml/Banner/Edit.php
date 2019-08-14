@@ -53,4 +53,19 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Edit  extends Mage_Adminhtml_Block
 	
 		return $this->__('Edit Banner');
 	}
+	
+	/**
+	 * Enable WYSIWYG editor
+	 *
+	 */
+	protected function _prepareLayout()
+	{
+		parent::_prepareLayout();
+
+		if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled()) {
+			$this->getLayout()->getBlock('head')->setCanLoadTinyMce(true);
+		}
+
+		return $this;
+	}
 }

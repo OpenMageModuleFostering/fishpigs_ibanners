@@ -6,7 +6,7 @@
 				<ibanners>
 					<title>iBanners</title>
 					<sort_order>24</sort_order>
-					<action>adminhtml/ibanners</action>
+					<action>adminhtml/iBanners</action>
 				</ibanners>
 			</children>
 		</cms>

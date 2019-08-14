@@ -6,7 +6,7 @@
  * @author      Ben Tideswell <help@fishpig.co.uk>
  */
 
-class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml_Controller_Action
+class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Fishpig_iBanners_Controller_Adminhtml_Abstract
 {
 	/**
 	 * Redirect to iBanners dashboard
@@ -15,7 +15,7 @@ class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml
 	 */
 	public function indexAction()
 	{
-		return $this->_redirect('*/ibanners');
+		return $this->_redirect('*/iBanners');
 	}
 	
 	/**
@@ -82,7 +82,7 @@ class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml
 			$this->_getSession()->addError($this->__('There was no data to save'));
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/iBanners');
 	}
 	
 	/**
@@ -105,7 +105,7 @@ class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml
 			}
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/iBanners');
 	}
 	
 	/**
@@ -138,7 +138,7 @@ class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml
 			}
 		}
 		
-		$this->_redirect('*/*');
+		$this->_redirect('*/iBanners');
 	}
 	
 	/**
@@ -157,5 +157,15 @@ class Fishpig_iBanners_Adminhtml_iBanners_GroupController extends Mage_Adminhtml
 		}
 		
 		return Mage::registry('ibanners_group');
+	}
+	
+	/**
+	 * Determine ACL permissions
+	 *
+	 * @return bool
+	 */
+	protected function _isAllowed()
+	{
+		return true;
 	}
 }

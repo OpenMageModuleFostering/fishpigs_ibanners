@@ -31,7 +31,7 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Grid extends Mage_Adminhtml_Block_
 				->setData(array(
 					'label'     => Mage::helper('adminhtml')->__('Add New Banner'),
 					'class' => 'add',
-					'onclick'   => "setLocation('" . $this->getUrl('*/ibanners_banner/new') . "');",
+					'onclick'   => "setLocation('" . $this->getUrl('*/iBanners_banner/new') . "');",
 				))
 		);
 				
@@ -108,7 +108,7 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Grid extends Mage_Adminhtml_Block_
 					array(
 						'caption' => Mage::helper('catalog')->__('Edit'),
 						'url'     => array(
-						'base'=>'*/ibanners_banner/edit',
+						'base'=>'*/iBanners_banner/edit',
 					),
 					'field'   => 'id'
 					)
@@ -137,7 +137,7 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Grid extends Mage_Adminhtml_Block_
 	 */
 	public function getRowUrl($row)
 	{
-		return $this->getUrl('*/ibanners_banner/edit', array('id' => $row->getId()));
+		return $this->getUrl('*/iBanners_banner/edit', array('id' => $row->getId()));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Grid extends Mage_Adminhtml_Block_
 	
 		$this->getMassactionBlock()->addItem('delete', array(
 			'label'=> $this->__('Delete'),
-			'url'  => $this->getUrl('*/ibanners_banner/massDelete'),
+			'url'  => $this->getUrl('*/iBanners_banner/massDelete'),
 			'confirm' => Mage::helper('catalog')->__('Are you sure?')
 		));
 	}

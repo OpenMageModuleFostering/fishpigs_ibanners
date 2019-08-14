@@ -38,7 +38,9 @@
 			</block>
 		</reference>
 	</adminhtml_ibanners_index>
+
 	<adminhtml_ibanners_group_edit>
+		<update handle="editor" />
 		<update handle="ibanners_default" />
 		<reference name="left">
 			<block type="ibanners/adminhtml_group_edit_tabs" name="group.tabs" />
@@ -47,7 +49,9 @@
 			<block type="ibanners/adminhtml_group_edit" name="groups" />
 		</reference>
 	</adminhtml_ibanners_group_edit>
+	
 	<adminhtml_ibanners_banner_edit>
+		<update handle="editor" />
 		<update handle="ibanners_default" />
 		<reference name="left">
 			<block type="ibanners/adminhtml_banner_edit_tabs" name="banners.tabs" />

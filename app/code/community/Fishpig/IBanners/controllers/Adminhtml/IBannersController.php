@@ -6,7 +6,7 @@
  * @author      Ben Tideswell <help@fishpig.co.uk>
  */
 
-class Fishpig_iBanners_Adminhtml_iBannersController extends Mage_Adminhtml_Controller_Action
+class Fishpig_iBanners_Adminhtml_iBannersController extends Fishpig_iBanners_Controller_Adminhtml_Abstract
 {
 	public function indexAction()
 	{
@@ -25,8 +25,7 @@ class Fishpig_iBanners_Adminhtml_iBannersController extends Mage_Adminhtml_Contr
 		$this->getResponse()
 			->setBody($this->getLayout()->createBlock('ibanners/adminhtml_group_grid')->toHtml());
 	}
-	
-	
+
 	/**
 	 * Display the banner grid
 	 *
@@ -38,31 +37,12 @@ class Fishpig_iBanners_Adminhtml_iBannersController extends Mage_Adminhtml_Contr
 	}
 	
 	/**
-	 * Display the Extend tab
+	 * Determine ACL permissions
 	 *
-	 * @return void
+	 * @return bool
 	 */
-	public function extendAction()
+	protected function _isAllowed()
 	{
-		$block = $this->getLayout()
-			->createBlock('ibanners/adminhtml_extend')
-			->setModule('Fishpig_iBanners')
-			->setMedium('Add-On Tab')
-			->setTemplate('large.phtml')
-			->setLimit(4)
-			->setPreferred(array(
-				'Fishpig_Bolt',
-				'Fishpig_Opti',
-				'Fishpig_BasketShipping',
-				'Fishpig_Wordpress',
-				'Fishpig_CrossLink',
-				'Fishpig_AttributeSplashPro',
-				'Fishpig_NoBots'
-			));
-			
-		$this->getResponse()
-			->setBody(
-				$block->toHtml()
-			);
+		return true;
 	}
 }

@@ -20,6 +20,11 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Edit_Tab_Form extends Mage_Adminht
 		);
 	}
 	
+	/**
+	 * Prepare the banner form
+	 *
+	 * @return $this
+	 */
 	protected function _prepareForm()
 	{
 		$form = new Varien_Data_Form();
@@ -29,7 +34,10 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Edit_Tab_Form extends Mage_Adminht
         
 		$this->setForm($form);
 		
-		$fieldset = $form->addFieldset('banner_general', array('legend'=> $this->__('General Information')));
+		$fieldset = $form->addFieldset('banner_general', array(
+			'legend'=> $this->__('General Information'),
+			'class' => 'fieldset-wide',
+		));
 
 		$this->_addElementTypes($fieldset);
 
@@ -70,11 +78,17 @@ class Fishpig_iBanners_Block_Adminhtml_Banner_Edit_Tab_Form extends Mage_Adminht
 		));
 		
 		$fieldset->addField('html', 'editor', array(
-			'name' 		=> 'html',
-			'label' 	=> $this->__('HTML'),
-			'title' 	=> $this->__('HTML'),
-			'style'		=> 'height: 120px; width: 98%;',
-		));
+			'name' => 'html',
+			'label' => $this->__('HTML'),
+			'title' => $this->__('HTML'),
+			'style' => 'height: 200px;',
+			'wysiwyg' => true,
+			'config' => Mage::getSingleton('cms/wysiwyg_config')->getConfig(array(
+				'add_widgets' => true,
+				'add_variables' => true,
+				'add_image' => true,
+				'files_browser_window_url' => $this->getUrl('adminhtml/cms_wysiwyg_images/index'))
+			)));
 
 		$fieldset->addField('image', 'image', array(
 			'name' 		=> 'image',

@@ -78,4 +78,16 @@ class Fishpig_iBanners_Model_Banner extends Mage_Core_Model_Abstract
 		
 		return $this->_getData('url');
 	}
+	
+	/**
+	 * Get the HTML field, process it and return it
+	 *
+	 * @return string
+	 */
+	public function getHtml()
+	{
+		return Mage::helper('cms')->getBlockTemplateProcessor()->filter(
+			$this->_getData('html')
+		);
+	}
 }
