@@ -10,6 +10,9 @@
 TODO
 - Convert animation and control values to serialized single columns
 
+18/01/2014 - 1.2.1.0
+- Fixed menu link in Magento Admin
+
 03/11/2013 - 1.2.0.0
 - Added iBanners Dashboard
 

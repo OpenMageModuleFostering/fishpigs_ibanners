@@ -49,7 +49,15 @@ class Fishpig_iBanners_Adminhtml_iBannersController extends Mage_Adminhtml_Contr
 			->setMedium('Add-On Tab')
 			->setTemplate('large.phtml')
 			->setLimit(4)
-			->setPreferred(array('Fishpig_Wordpress', 'Fishpig_CrossLink', 'Fishpig_AttributeSplashPro', 'Fishpig_NoBots'));
+			->setPreferred(array(
+				'Fishpig_Bolt',
+				'Fishpig_Opti',
+				'Fishpig_BasketShipping',
+				'Fishpig_Wordpress',
+				'Fishpig_CrossLink',
+				'Fishpig_AttributeSplashPro',
+				'Fishpig_NoBots'
+			));
 			
 		$this->getResponse()
 			->setBody(
