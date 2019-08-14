@@ -11,6 +11,7 @@ class Fishpig_iBanners_Adminhtml_iBannersController extends Mage_Adminhtml_Contr
 	public function indexAction()
 	{
 		$this->loadLayout();
+		$this->_title('iBanners');
 		$this->_setActiveMenu('cms/ibanners');
 		$this->renderLayout();
 	}

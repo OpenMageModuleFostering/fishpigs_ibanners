@@ -6,7 +6,7 @@
 				<ibanners translate="title" module="ibanners">
 					<title>iBanners</title>
 					<sort_order>24</sort_order>
-					<action>hq/ibanners</action>
+					<action>adminhtml/ibanners</action>
 				</ibanners>
 			</children>
 		</cms>
@@ -20,20 +20,6 @@
 							<ibanners translate="title" module="ibanners">
 								<title>iBanners</title>
 								<sort_order>120</sort_order>
-								<children>
-									<group translate="title">
-										<title>Manage Groups</title>
-										<sort_order>6</sort_order>
-									</group>
-									<banner translate="title">
-										<title>Manage Banners</title>
-										<sort_order>11</sort_order>
-									</banner>
-									<settings translate="title">
-										<title>Settings</title>
-										<sort_order>99</sort_order>
-									</settings>
-								</children>
 							</ibanners>
 						</children>
 					</cms>
