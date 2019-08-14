@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Fishpigs_iBanners",
+    "type": "magento-module",
+    "license": "FishPig-EULA",
+    "homepage": "",
+    "description": "Create multiple banner slideshows for your site.",
+    "authors": [
+    {
+        "name": "fishpig",
+        "email": "ben@fishpig.co.uk"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
