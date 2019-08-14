@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<config>
+<config />
+<!--
 	<tabs>
 		<fishpig translate="label" module="ibanners">
 			<label>FishPig</label>
@@ -37,3 +38,4 @@
         </ibanners>
     </sections>
 </config>
+-->
